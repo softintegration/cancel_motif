@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_cancel_motif,cancel_motif,model_cancel_motif,base.group_user,1,1,1,1
+access_cancel_motif_confirmation,cancel_motif_confirmation,model_cancel_motif_confirmation,base.group_user,1,1,1,1

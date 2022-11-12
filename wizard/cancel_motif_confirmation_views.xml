@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="view_cancel_motif_confirmation" model="ir.ui.view">
+        <field name="name">view.cancel.motif.confirmation</field>
+        <field name="model">cancel.motif.confirmation</field>
+        <field name="arch" type="xml">
+            <form string="Cancellation motif">
+                <group>
+                    <p>
+                        What is the reason for this cancellation?
+                    </p>
+                </group>
+                <group>
+                    <field name="cancel_motif_id" nolabel="1" required="1"/>
+                </group>
+                <footer>
+                    <button name="process" string="Confirm" type="object" class="oe_highlight" data-hotkey="c"/>
+                    <button string="_Cancel" class="btn-secondary" special="cancel" data-hotkey="z" />
+                </footer>
+            </form>
+        </field>
+    </record>
+</odoo>

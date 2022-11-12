@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='utf-8'?><odoo>
+  <data>
+
+
+     <record id="cancel_motif_tree_view" model="ir.ui.view">
+          <field name="name">Cancel motif tree view</field>
+          <field name="model">cancel.motif</field>
+          <field name="arch" type="xml">
+            <tree>
+              <field name="name"/>
+              <field name="model" invisible="1"/>
+              <field name="description"/>
+            </tree>
+          </field>
+     </record>
+
+    <record id="cancel_motif_form_view" model="ir.ui.view">
+      <field name="name">Cancel motif form view</field>
+      <field name="model">cancel.motif</field>
+      <field name="arch" type="xml">
+        <form>
+          <header/>
+          <sheet>
+                <div class="oe_button_box" name="button_box"/>
+                <div class="oe_title">
+                    <label class="oe_edit_only" for="name"/>
+                    <h1><field name="name" placeholder="Name..."/></h1>
+                </div>
+                <group name="description">
+                    <field name="model" invisible="1"/>
+                    <field name="description" nolabel="1" placeholder="Description..."/>
+                </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+  </data>
+</odoo>
