@@ -10,13 +10,16 @@ class CancelMotifConfirmation(models.TransientModel):
     _description = 'Cancel motif confirmation'
 
     cancel_motif_id = fields.Many2one('cancel.motif',string='Cancel motif')
+    cancel_date = fields.Date(string='Cancel date',default=lambda self: fields.Datetime.now())
+    display_cancel_date = fields.Boolean(default=False)
 
     def process(self):
         record_model = self.env.context.get('model')
         record_ids = self.env.context.get('model_ids')
         origin_method = self.env.context.get('method')
+        cancel_date = self.env.context.get('cancel_date','cancel_date')
         records = self.env[record_model].browse(record_ids)
-        records.write({'cancel_motif_id':self.cancel_motif_id.id})
+        records.write({'cancel_motif_id':self.cancel_motif_id.id,cancel_date:self.cancel_date})
         return getattr(records,origin_method)()
 
 

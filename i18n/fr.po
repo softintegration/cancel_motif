@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 15.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-11-12 18:02+0000\n"
-"PO-Revision-Date: 2022-11-12 18:02+0000\n"
+"POT-Creation-Date: 2022-12-20 21:44+0000\n"
+"PO-Revision-Date: 2022-12-20 21:44+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -16,11 +16,27 @@ msgstr ""
 "Plural-Forms: \n"
 
 #. module: cancel_motif
+#: model_terms:ir.ui.view,arch_db:cancel_motif.view_cancel_motif_confirmation
+msgid "<strong>Cancel date</strong>"
+msgstr "<strong>Date d'annulation</strong>"
+
+#. module: cancel_motif
+#: model_terms:ir.ui.view,arch_db:cancel_motif.view_cancel_motif_confirmation
+msgid "<strong>What is the reason for this cancellation?</strong>"
+msgstr "<strong>Quelle est la raison de cette annulation?</strong>"
+
+#. module: cancel_motif
+#: model:ir.model.fields,field_description:cancel_motif.field_cancel_motif_class__cancel_date
+#: model:ir.model.fields,field_description:cancel_motif.field_cancel_motif_confirmation__cancel_date
+msgid "Cancel date"
+msgstr "Date d'annulation"
+
+#. module: cancel_motif
 #: model:ir.model,name:cancel_motif.model_cancel_motif
 #: model:ir.model.fields,field_description:cancel_motif.field_cancel_motif_class__cancel_motif_id
 #: model:ir.model.fields,field_description:cancel_motif.field_cancel_motif_confirmation__cancel_motif_id
 msgid "Cancel motif"
-msgstr ""
+msgstr "Date d'annulation"
 
 #. module: cancel_motif
 #: model:ir.model,name:cancel_motif.model_cancel_motif_class
@@ -59,7 +75,17 @@ msgstr ""
 #. module: cancel_motif
 #: model:ir.model.fields,field_description:cancel_motif.field_cancel_motif__description
 msgid "Description"
-msgstr "Description"
+msgstr ""
+
+#. module: cancel_motif
+#: model_terms:ir.ui.view,arch_db:cancel_motif.cancel_motif_form_view
+msgid "Description..."
+msgstr ""
+
+#. module: cancel_motif
+#: model:ir.model.fields,field_description:cancel_motif.field_cancel_motif_confirmation__display_cancel_date
+msgid "Display Cancel Date"
+msgstr ""
 
 #. module: cancel_motif
 #: model:ir.model.fields,field_description:cancel_motif.field_cancel_motif__display_name
@@ -102,9 +128,9 @@ msgid "Name"
 msgstr "Nom"
 
 #. module: cancel_motif
-#: model_terms:ir.ui.view,arch_db:cancel_motif.view_cancel_motif_confirmation
-msgid "What is the reason for this cancellation?"
-msgstr "Quelle est la raison de cette annulation?"
+#: model_terms:ir.ui.view,arch_db:cancel_motif.cancel_motif_form_view
+msgid "Name..."
+msgstr ""
 
 #. module: cancel_motif
 #: model_terms:ir.ui.view,arch_db:cancel_motif.view_cancel_motif_confirmation

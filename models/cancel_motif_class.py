@@ -11,6 +11,7 @@ class CancelMotifClass(models.AbstractModel):
     _description = 'Cancel motif class'
 
     cancel_motif_id = fields.Many2one('cancel.motif',string='Cancel motif')
+    cancel_date = fields.Date(string='Cancel date')
 
     def _action_cancel_motif_wizard(self):
         view = self.env.ref('cancel_motif.view_cancel_motif_confirmation')
