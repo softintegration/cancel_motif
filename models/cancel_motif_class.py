@@ -15,6 +15,9 @@ class CancelMotifClass(models.AbstractModel):
 
     def _action_cancel_motif_wizard(self):
         view = self.env.ref('cancel_motif.view_cancel_motif_confirmation')
+        new_wizard = self.env['cancel.motif.confirmation'].create({
+            'model':self.env.context.get('model',False)
+        })
         return {
             'name': _('Cancellation motif'),
             'type': 'ir.actions.act_window',
@@ -23,6 +26,7 @@ class CancelMotifClass(models.AbstractModel):
             'views': [(view.id, 'form')],
             'view_id': view.id,
             'target': 'new',
+            'res_id':new_wizard.id,
             'context': dict(self.env.context),
         }
 

@@ -5,17 +5,20 @@
         <field name="model">cancel.motif.confirmation</field>
         <field name="arch" type="xml">
             <form string="Cancellation motif">
+                <field name="model" invisible="1"/>
                 <p attrs="{'invisible':[('display_cancel_date','=',True)]}">
                     <strong>What is the reason for this cancellation?</strong>
                 </p>
                 <group attrs="{'invisible':[('display_cancel_date','=',True)]}">
-                    <field name="cancel_motif_id" nolabel="1" required="1"/>
+                    <field name="cancel_motif_id" nolabel="1" required="1" context="{'default_model':model}"
+                    domain="[('model','=',model)]"/>
                 </group>
                 <group attrs="{'invisible':[('display_cancel_date','=',False)]}">
                     <p>
                         <strong>What is the reason for this cancellation?</strong>
                     </p>
-                    <field name="cancel_motif_id" nolabel="1" required="1"/>
+                    <field name="cancel_motif_id" nolabel="1" required="1" context="{'default_model':model}"
+                    domain="[('model','=',model)]"/>
                 </group>
                 <group attrs="{'invisible':[('display_cancel_date','=',False)]}">
                      <p>
