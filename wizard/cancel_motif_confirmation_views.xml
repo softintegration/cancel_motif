@@ -13,12 +13,12 @@
                     <field name="cancel_motif_id" nolabel="1" required="1" context="{'default_model':model}"
                     domain="[('model','=',model)]"/>
                 </group>
-                <group attrs="{'invisible':[('display_cancel_date','=',False)]}">
+                <group attrs="{'invisible':['|',('display_cancel_date','=',False),('display_cancel_motif_id','=',False)]}">
                     <p>
                         <strong>What is the reason for this cancellation?</strong>
                     </p>
-                    <field name="cancel_motif_id" nolabel="1" required="1" context="{'default_model':model}"
-                    domain="[('model','=',model)]"/>
+                    <field name="cancel_motif_id" nolabel="1"  context="{'default_model':model}"
+                    domain="[('model','=',model)]" attrs="{'invisible':[('display_cancel_motif_id','=',False)],'required':[('required_cancel_motif_id','=',True)]}"/>
                 </group>
                 <group attrs="{'invisible':[('display_cancel_date','=',False)]}">
                      <p>
@@ -26,6 +26,8 @@
                     </p>
                     <field name="cancel_date" attrs="{'invisible':[('display_cancel_date','=',False)]}" required="1" nolabel="1"/>
                     <field name="display_cancel_date" invisible="1"/>
+                    <field name="display_cancel_motif_id" invisible="1"/>
+                    <field name="required_cancel_motif_id" invisible="1"/>
                 </group>
                 <footer>
                     <button name="process" string="Confirm" type="object" class="oe_highlight" data-hotkey="c"/>
